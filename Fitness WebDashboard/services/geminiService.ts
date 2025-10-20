@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Task, TaskCategory, DietAnalysisResult, UserProfile, Quiz } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: 'YOUR_API_KEY' });
+const ai = new GoogleGenAI({ apiKey: 'GEMINI_API_KEY' });
 
 export const generatePersonalizedGoals = async (completedTasks: Task[], incompleteTasks: Task[]): Promise<Omit<Task, 'id' | 'completed'>[]> => {
   const completedTitles = completedTasks.map(t => t.title).join(', ') || 'None';
